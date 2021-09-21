@@ -1,0 +1,25 @@
+extends layouts/main-layout.pug
+
+block content
+    main
+        div.container
+            div.row
+                div.col-12
+                    if listaProductos.length
+                        div.wrapper
+                            table.table.table-hover.tablaproductos
+                                thead
+                                    tr
+                                        th(scope="col") Producto
+                                        th.text-center(scope="col") Precio
+                                        th.text-center(scope="col") Imagen
+                                tbody
+                                    each producto in listaProductos
+                                        tr 
+                                            td= producto.title
+                                            td.text-center= producto.price
+                                            td.text-center
+                                                img.tablaproductos__image(src=producto.thumbnail, alt=producto.title)
+                    else
+                        div.wrapper.text-center
+                            h2 No hay productos

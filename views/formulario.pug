@@ -1,0 +1,30 @@
+extends layouts/main-layout.pug
+
+block content
+    main
+        div.container
+            div.row
+                div.col-12
+                    form.formproducto.wrapper#formproducto(method="post" onsubmit="sendForm(); return false;")
+                        div.formproducto__row
+                            div.formproducto__field
+                                label(for="title") Titulo
+                            div.formproducto__field
+                                input#title(type="text" name="title" placeholder="Título del producto.." required)
+                        div.formproducto__row
+                            div.formproducto__field
+                                label(for="price") Precio
+                            div.formproducto__field
+                                input#price(type="number" name="price" placeholder="Precio del producto.." required)
+                        div.formproducto__row
+                            div.formproducto__field
+                                label(for="thumbnail") URL de imagen
+                            div.formproducto__field
+                                input#thumbnail(type="text" name="thumbnail" placeholder="Imagen del producto.." required)
+                        div.formproducto__row
+                            div.formproducto__field
+                                span.formproducto__span#formproducto__span-successful ¡Producto agregado correctamente!
+                                span.formproducto__span#formproducto__span-failed No se pudo agregar el producto. Intente nuevamente.
+                        div.formproducto__row
+                            div.formproducto__field
+                                input(type="submit" value="Enviar")
